@@ -1,4 +1,4 @@
-package fs.textmanager;
+package;
 
 import flash.geom.Point;
 import openfl.Assets;
@@ -95,18 +95,17 @@ class TextManager
 		return fonts.get(id);
 	}
 	
-	public static function CreateText(fontId : String, txt : String = "",pos : Point = null,size : Int = 0, color : Int = 0x000000) : fs.textmanager.Text
+	public static function CreateText(fontId : String, txt : String = "",pos : Point = null,size : Int = 0, color : Int = 0x000000,letterSpacing : Int = 0,xAlign : String = "center", yAlign : String = "middle", bold : Bool = false, order : Int = 0) : Text
 	{
 		var font : Font;
-		var text : fs.textmanager.Text;
+		var text : Text;
 		
 		font = fonts.get(fontId);
 		
 		if (font == null)
 			text = null;
 		else
-			text = new fs.textmanager.Text(font.fontName, txt, size, color, 0, pos,"center","center",false);
-		
+			text = new Text(font.fontName, txt, size, color, letterSpacing, pos, xAlign, yAlign, bold,order);
 			
 		return text;
 	}
