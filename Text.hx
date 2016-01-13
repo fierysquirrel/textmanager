@@ -87,6 +87,11 @@ class Text extends TextField
 		return initialPos;
 	}
 	
+	public function GetRawPos() : Point
+	{
+		return rawPos;
+	}
+	
 	public function GetRawText() : String
 	{
 		return rawText;
