@@ -90,6 +90,11 @@ class TextManager
 		}
 	}
 	
+	public static function FontExists(id : String) : Bool
+	{
+		return fonts.exists(id);
+	}
+	
 	public static function GetFont(id : String) : Font
 	{
 		return fonts.get(id);
